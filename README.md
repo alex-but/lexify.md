@@ -8,3 +8,26 @@ Lexify.md is a Python tool for managing project vocabulary directly within your 
 - Remove existing terms from the glossary.
 - Update definitions of existing terms in the glossary.
 - Automatically create links to glossary terms within project documentation.
+
+## Install and Usage
+
+Install pipx if not available: https://pipx.pypa.io/stable/installation/
+
+```sh
+pipx install git+https://github.com/alex-but/lexify.md
+```
+
+```
+Usage: lexify [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  add
+  init
+  linkify
+  remove
+  update
+
+```
