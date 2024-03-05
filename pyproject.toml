@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "lexify-md"
+version = "0.1.0"
+description = ""
+authors = ["balex"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "lexify", from="src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+
+[tool.poetry.scripts]
+lexify = "lexify.main:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
