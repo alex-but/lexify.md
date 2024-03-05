@@ -1,6 +1,10 @@
 # Lexify.md
 
-Lexify.md is a Python tool for managing project vocabulary directly within your codebase. It helps developers maintain consistency and clarity by easily adding, removing, updating, and linking glossary terms to their project documentation.
+_Let's agree on terminology_
+
+Lexify.md is a tool for managing project vocabulary directly within your codebase: GLOSSARY.md in the root of your project.
+
+It helps developers maintain consistency and clarity by easily adding, removing, updating, and linking glossary terms to their project and make it part of the code.
 
 ## Features
 
@@ -29,5 +33,4 @@ Commands:
   linkify
   remove
   update
-
 ```
