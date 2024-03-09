@@ -14,24 +14,43 @@ def parse_glossary(glossary: str) -> list[TermDefinition]:
     # now extra whitespaces
     glossary_lines = [line for line in glossary_lines if line.strip()]
 
-    title_idx = glossary_lines.index(f"# {GLOSSARY}")
-    index_idx = glossary_lines.index(f"## {INDEX}")
-    definitions_idx = glossary_lines.index(f"## {DEFINITIONS}")
-
+    try:
+        title_idx = glossary_lines.index(f"# {GLOSSARY}")
+    except Exception as e:
+        raise InvalidGlossaryFormatEx(
+            "The format of the exisiting glossary is incorrect. The '# Glossary' title is missing"
+        )
+    try:
+        index_idx = glossary_lines.index(f"## {INDEX}")
+        definitions_idx = glossary_lines.index(f"## {DEFINITIONS}")
+    except Exception as e:
+        raise InvalidGlossaryFormatEx(
+            "The format of the exisiting glossary is incorrect. The '# Index' or `# Definitions` are missing"
+        )
     indexes = glossary_lines[index_idx + 1 : definitions_idx]
-    definitions = glossary_lines[definitions_idx:]
+    definitions = glossary_lines[definitions_idx + 1 :]
 
-    assert len(indexes) == len(definitions)
-    term_definitoins = []
-    for definition in definitions:
-        parsed_term_condition = re.match(
-            "<a name='(.*)'></a>**(.*)**: (.*)", definition
+    try:
+        assert title_idx < index_idx
+        assert index_idx < definitions_idx
+        no_indexes = len(indexes)
+        no_defs = len(definitions) / 2
+        assert no_indexes == no_defs
+
+    except Exception as e:
+        raise InvalidGlossaryFormatEx(
+            "The format of the exisiting glossary is incorrect. Order of titles missmatch or not matching indexes and definitions"
         )
-        term_definitoins.append(
-            term=parsed_term_condition.group(1),
-            definition=parsed_term_condition.group(2),
+    term_definitions = []
+    # agregate definition pairs
+    for term, definition in zip(definitions[0::2], definitions[1::2]):
+        term = term.replace("####", "").strip()
+        term_definition = TermDefinition(
+            term=term,
+            definition=definition,
         )
-    return parsed_term_condition
+        term_definitions.append(term_definition)
+    return term_definitions
 
 
 def generate_glossary(term_definitions: TermDefinition) -> str:

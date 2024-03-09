@@ -21,7 +21,7 @@ def test_valid_glossary_format():
             definition="software packages that have to be installed in your computer to run a software.",
         ),
         TermDefinition(
-            term="dependencies",
+            term="development environment",
             definition="a local folder with the dependencies required by a specific software application.",
         ),
     ]
@@ -41,7 +41,7 @@ def test_glossary_generator():
             definition="software packages that have to be installed in your computer to run a software.",
         ),
         TermDefinition(
-            term="dependencies",
+            term="development environment",
             definition="a local folder with the dependencies required by a specific software application.",
         ),
     ]
