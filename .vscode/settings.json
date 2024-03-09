@@ -1,0 +1,13 @@
+{
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFoldingRangeProvider": "njpwerner.autodocstring",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.testing.pytestEnabled": true,
+    "vsintellicode.features.python.deepLearning": "enabled",
+    "python.analysis.autoImportCompletions": true
+  }
+  
