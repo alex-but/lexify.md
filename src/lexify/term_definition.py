@@ -14,6 +14,10 @@ class TermDefinition:
     term: str
     definition: str
 
+    @property
+    def anchor(self):
+        return self.term.replace(" ", "-")
+
 
 def validate_term_definition(term_definition: TermDefinition) -> bool:
     if " " in term_definition.term:
