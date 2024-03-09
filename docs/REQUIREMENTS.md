@@ -26,7 +26,7 @@ Manual processes or external tools for managing terminology are cumbersome and e
 
 ### 2.2 Secondary Objectives (Nice to Have)
 - Automatically create links to glossary terms within project documentation to enhance readability and understanding.
-
+- Provides assitance for spell checking and grammar
 
 ## 3. Target Audience
 
@@ -48,7 +48,7 @@ Manual processes or external tools for managing terminology are cumbersome and e
 ### 4.1 Command-Line Interface
 - Lexify.md shall provide a command-line interface accessible via terminal commands.
 - The command-line interface shall support commands for adding, removing, updating, and linking glossary terms.
-- Lexify should be easy to install on Linux, Windows and Mac
+- There is an easy to use file format that can hold on to a medium size glossary and can be viewed as part of the code using very common tools.
 
 ### 4.2 Glossary Management
 - Lexify.md shall allow users to add new terms with their definitions to the project glossary.
@@ -94,4 +94,3 @@ Manual processes or external tools for managing terminology are cumbersome and e
 
 # Scratchpad
 
-- There is an easy to use file format that can hold on to a medium size glossary and can be viewed as part of the code using very common tools.
