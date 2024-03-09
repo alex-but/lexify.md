@@ -1,5 +1,4 @@
 from lexify.term_definition import TermDefinition
-import re
 
 from lexify.wording import DEFINITIONS, GLOSSARY, INDEX
 
@@ -53,5 +52,17 @@ def parse_glossary(glossary: str) -> list[TermDefinition]:
     return term_definitions
 
 
-def generate_glossary(term_definitions: TermDefinition) -> str:
-    pass
+def generate_glossary(term_definitions: list[TermDefinition]) -> str:
+    glossary_lines = []
+    glossary_lines.append(f"# {GLOSSARY}\n\n")
+    glossary_lines.append(f"## {INDEX}\n\n")
+    for term_definition in term_definitions:
+        glossary_lines.append(
+            f"[{term_definition.term}](#{term_definition.anchor})\n\n"
+        )
+    glossary_lines.append(f"## {DEFINITIONS}\n\n")
+    for term_definition in term_definitions:
+        glossary_lines.append(
+            f"#### {term_definition.term}\n{term_definition.definition}\n"
+        )
+    return "".join(glossary_lines)
