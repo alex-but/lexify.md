@@ -1,5 +1,9 @@
 import pytest
-from lexify.glossary_parser import parse_glossary, InvalidGlossaryFormatEx
+from lexify.glossary_parser import (
+    generate_glossary,
+    parse_glossary,
+    InvalidGlossaryFormatEx,
+)
 from lexify.term_definition import TermDefinition
 
 
@@ -24,3 +28,20 @@ def test_valid_glossary_format():
         glossary_str = mock_glossary_file.read()
         glossary = parse_glossary(glossary=glossary_str)
         assert glossary == test_glossary
+
+
+def test_glossary_generator():
+    glossary: list[TermDefinition] = [
+        TermDefinition(
+            term="dependencies",
+            definition="software packages that have to be installed in your computer to run a software.",
+        ),
+        TermDefinition(
+            term="dependencies",
+            definition="a local folder with the dependencies required by a specific software application.",
+        ),
+    ]
+    with open("./asets/mock_glossary.md", "r") as mock_glossary_file:
+        test_glossary_str = mock_glossary_file.read()
+        glossary_str = generate_glossary(glossary=glossary)
+        assert test_glossary_str == glossary_str

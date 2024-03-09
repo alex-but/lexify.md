@@ -7,3 +7,7 @@ class InvalidGlossaryFormatEx(Exception):
 
 def parse_glossary(glossary: str) -> list[TermDefinition]:
     pass
+
+
+def generate_glossary(term_definitions: TermDefinition) -> str:
+    pass
