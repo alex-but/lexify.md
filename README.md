@@ -28,9 +28,8 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  add
-  init
-  linkify
-  remove
-  update
-```
+  add    <key>=<definition> : Adds the <key> to the dictionary
+  init                      : Creates a new empty GLOSARRY.md file following lexify format
+  remove <key>              : Removes the <key> from dictionary 
+  update <key>=<definition> : Updates the definition of <key>
+````
