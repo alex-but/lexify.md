@@ -26,4 +26,8 @@ def validate_term_definition(term_definition: TermDefinition) -> bool:
         raise InvalidDefinitonEx(
             "Your definition is too long. We recoomend less than 500 chr"
         )
+    if len(term_definition.definition.strip()) < 1:
+        raise InvalidDefinitonEx(
+            "Your definition is too short. We need at least 3 characters"
+        )
     return True

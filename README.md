@@ -32,4 +32,5 @@ Commands:
   init                      : Creates a new empty GLOSARRY.md file following lexify format
   remove <key>              : Removes the <key> from dictionary 
   update <key>=<definition> : Updates the definition of <key>
+  read   <key>              : reads the description of <key>
 ````
