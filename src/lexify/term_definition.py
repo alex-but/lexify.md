@@ -16,7 +16,7 @@ class TermDefinition:
 
     @property
     def anchor(self):
-        return self.term.replace(" ", "-")
+        return self.term.replace(" ", "-").lower()
 
 
 def validate_term_definition(term_definition: TermDefinition) -> bool:

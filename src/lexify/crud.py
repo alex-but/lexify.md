@@ -33,7 +33,7 @@ def create(
                 term_definition.term,
             )
     lexicon_with_new = lexicon + [term_definition]
-    lexicon_with_new = sorted(lexicon_with_new, key=lambda x: x.term)
+    lexicon_with_new = sorted(lexicon_with_new, key=lambda x: x.anchor)
     return lexicon_with_new
 
 
