@@ -8,8 +8,6 @@ from lexify import crud
 
 def add_word_to_glossary(term, definition):
     term_definition = TermDefinition(term=term, definition=definition)
-    validate_term_definition(term_definition=term_definition)
-
     # Read the existing glossary
     with open("GLOSSARY.md", "r") as file:
         glossary_str = file.read()
@@ -45,7 +43,6 @@ def read_word_from_glossary(term):
 
 def update_word_in_glossary(term, definition):
     term_definition = TermDefinition(term=term, definition=definition)
-    validate_term_definition(term_definition=term_definition)
     remove_word_from_glossary(term)
     add_word_to_glossary(term, definition)
 

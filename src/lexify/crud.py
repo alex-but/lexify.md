@@ -1,5 +1,5 @@
 from lexify import term_definition
-from lexify.term_definition import TermDefinition
+from lexify.term_definition import TermDefinition, validate_term_definition
 
 
 class TermDoesNotExistEx(Exception):
@@ -21,6 +21,7 @@ def read(term: str, lexicon: list[TermDefinition]) -> str:
 def create(
     term_definition: TermDefinition, lexicon: list[TermDefinition]
 ) -> list[TermDefinition]:
+    validate_term_definition(term_definition=term_definition)
     term_exists = True
     try:
         read(term=term_definition.term, lexicon=lexicon)
@@ -33,7 +34,7 @@ def create(
                 term_definition.term,
             )
     lexicon_with_new = lexicon + [term_definition]
-    lexicon_with_new = sorted(lexicon_with_new, key=lambda x: x.term)
+    lexicon_with_new = sorted(lexicon_with_new, key=lambda x: x.anchor)
     return lexicon_with_new
 
 
