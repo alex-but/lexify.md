@@ -16,11 +16,11 @@ def test_create():
         TermDefinition(term="a", definition="def_a"),
         TermDefinition(term="C", definition="def_c"),
     ]
-    new_term_definition = TermDefinition(term="b", definition="def_b")
+    new_term_definition = TermDefinition(term="b b", definition="def_b")
 
     result_glossary: list[TermDefinition] = [
         TermDefinition(term="a", definition="def_a"),
-        TermDefinition(term="b", definition="def_b"),
+        TermDefinition(term="b b", definition="def_b"),
         TermDefinition(term="C", definition="def_c"),
     ]
 
