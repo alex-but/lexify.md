@@ -14,14 +14,14 @@ from lexify.term_definition import TermDefinition
 def test_create():
     test_glossary: list[TermDefinition] = [
         TermDefinition(term="a", definition="def_a"),
-        TermDefinition(term="c", definition="def_c"),
+        TermDefinition(term="C", definition="def_c"),
     ]
     new_term_definition = TermDefinition(term="b", definition="def_b")
 
     result_glossary: list[TermDefinition] = [
         TermDefinition(term="a", definition="def_a"),
         TermDefinition(term="b", definition="def_b"),
-        TermDefinition(term="c", definition="def_c"),
+        TermDefinition(term="C", definition="def_c"),
     ]
 
     assert result_glossary == create(
