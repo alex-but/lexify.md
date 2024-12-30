@@ -1,9 +1,15 @@
-import click
 from lexify import term_definition
 from lexify.glossary_parser import generate_glossary, parse_glossary
-
 from lexify.term_definition import TermDefinition, validate_term_definition
 from lexify import crud
+
+import click
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("lexify-md")
+except PackageNotFoundError:
+    __version__ = "unknown"
 
 
 def add_word_to_glossary(term, definition):
@@ -46,7 +52,7 @@ def update_word_in_glossary(term, definition):
     remove_word_from_glossary(term)
     add_word_to_glossary(term, definition)
 
-
+@click.version_option(version=__version__)
 @click.group()
 def cli():
     pass

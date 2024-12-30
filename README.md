@@ -24,7 +24,8 @@ pipx install git+https://github.com/alex-but/lexify.md
 ```
 Usage: lexify [OPTIONS] COMMAND [ARGS]...
 
-Options:
+Options: 
+  --version  Show the version and exit.
   --help  Show this message and exit.
 
 Commands:
